@@ -1,0 +1,10 @@
+<%= simple_form_for @user do |f| %>
+
+  <%= render 'common/errors', resource: @user %>
+
+<div class="col-md-6">
+  <%= f.input :name, label: 'Имя или погремуха' %>
+  <%= f.button :submit %>
+  <%= link_to 'Вернуться', users_path %>
+<% end %>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Velobas</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <%= link_to 'Велобаскетбол', root_path, :class => "nav-link navbar-brand active font-weight-bold" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Игроки', users_path, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Добавить игрока', new_user_path, :class => "nav-link" %>
+      </li>
+    </ul>
+      <%= yield %>
+  </body>
+</html>

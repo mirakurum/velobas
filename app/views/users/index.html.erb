@@ -1,0 +1,30 @@
+<h1>Все игроки</h1>
+
+<table class="table table-striped table-bordered">
+  <tr class="thead-inverse">
+    <th>#</th>
+    <th>Кто</th>
+    <th>Очков</th>
+    <th>Мячей после 30</th>
+    <th>Мячей до 30</th>
+    <th>Времени сыграно</th>
+    <th>Ачивки</th>
+    <th>Изменить</th>
+    <th>Удалить</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.total_score %></td>
+      <td><%= user.dist_goal %></td>
+      <td><%= user.close_goal %></td>
+      <td><%= user.play_time %></td>
+      <td><%= user.achievement %></td>
+      <td><%= link_to 'Изменить', edit_user_path(user) %></td>
+      <td><%= link_to 'Удалить', user_path(user),
+              method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>
