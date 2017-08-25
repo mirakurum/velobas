@@ -1,4 +1,4 @@
-<h1>Все матчи</h1>
+<h1>Все игроки</h1>
 
 <table class="table table-striped table-bordered">
   <tr class="thead-inverse">
@@ -13,17 +13,17 @@
     <th>Удалить</th>
   </tr>
 
-  <% @users.each do |user| %>
+  <% @rounds.each do |round| %>
     <tr>
-      <td><%= user.id %></td>
-      <td><%= user.name %></td>
-      <td><%= user.total_score %></td>
-      <td><%= user.dist_goal %></td>
-      <td><%= user.close_goal %></td>
-      <td><%= user.play_time %></td>
-      <td><%= user.achievement %></td>
-      <td><%= link_to 'Изменить', edit_user_path(user) %></td>
-      <td><%= link_to 'Удалить', user_path(user),
+      <td><%= round.id %></td>
+      <td><%= round.place %></td>
+      <td><%= round.start %></td>
+      <td><%= round.end %></td>
+      <td><%#= round.close_goal %></td>
+      <td><%#= round.play_time %></td>
+      <td><%#= round.achievement %></td>
+      <td><%= link_to 'Изменить', edit_round_path(round) %></td>
+      <td><%= link_to 'Удалить', round_path(round),
               method: :delete, data: { confirm: 'Вы уверены?' } %></td>
     </tr>
   <% end %>

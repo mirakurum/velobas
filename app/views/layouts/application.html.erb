@@ -11,13 +11,16 @@
   <body>
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <%= link_to 'Велобаскетбол', root_path, :class => "nav-link navbar-brand active font-weight-bold" %>
+        <%= link_to 'Велобаскетбол', rounds_path, :class => "nav-link navbar-brand active font-weight-bold" %>
       </li>
       <li class="nav-item">
         <%= link_to 'Игроки', users_path, :class => "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to 'Добавить игрока', new_user_path, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Добавить матч', new_round_path, :class => "nav-link" %>
       </li>
     </ul>
       <%= yield %>

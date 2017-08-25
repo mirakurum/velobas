@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822114356) do
+ActiveRecord::Schema.define(version: 20170824143023) do
+
+  create_table "rounds", force: :cascade do |t|
+    t.datetime "start"
+    t.datetime "end"
+    t.string "place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,6 +29,17 @@ ActiveRecord::Schema.define(version: 20170822114356) do
     t.string "achievement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users_and_rounds", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "round_id"
+    t.string "score_after30"
+    t.string "score_before30"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["round_id"], name: "index_users_and_rounds_on_round_id"
+    t.index ["user_id"], name: "index_users_and_rounds_on_user_id"
   end
 
 end

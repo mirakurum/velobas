@@ -1,0 +1,15 @@
+<%= simple_form_for @round do |f| %>
+
+<%= render 'common/errors', resource: @round %>
+
+<div class="col-md-6">
+  <%= f.input :place, label: 'Стадион' %>
+  <%= f.input :start, label: 'Начало матча' %>
+  <%= f.input :end, label: 'Окончание' %>
+  <%= f.association :users, as: :check_boxes %>
+
+
+  <%= f.button :submit %>
+  <%= link_to 'Вернуться', rounds_path %>
+<% end %>
+</div>
