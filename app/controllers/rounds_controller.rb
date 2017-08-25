@@ -38,6 +38,9 @@ class RoundsController < ApplicationController
   private
 
   def round_params
-    params.require(:round).permit(:start, :end, :place, :user)
+    params.require(:round).permit(:start, :end, :place,
+      users_and_rounds_attributes: [:id, :user_id, :score_after30,
+                                   :score_before30, :_destroy,
+        user_attributes: [:id, :_destroy, :name]])
   end
 end

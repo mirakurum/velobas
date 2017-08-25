@@ -19,7 +19,7 @@
       <td><%= round.place %></td>
       <td><%= round.start %></td>
       <td><%= round.end %></td>
-      <td><%#= round.close_goal %></td>
+      <td><%= round.users.count %></td>
       <td><%#= round.play_time %></td>
       <td><%#= round.achievement %></td>
       <td><%= link_to 'Изменить', edit_round_path(round) %></td>
